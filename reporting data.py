@@ -80,14 +80,5 @@ You can find the indicators in the output of the cell above.
 label = "Life satisfaction"
 predictor = ["GDP per capita" , "Water quality" ]
 country_stats = prepare_country_stats(oecd_bli, gdp_per_capita, predictor, label)
-print(country_stats.head())
+print(country_stats)
 print(len(country_stats))
-
-X = np.c_[country_stats[predictor]]
-y = np.c_[country_stats[label]]
-
-# Visualize the data
-import sklearn.neighbors
-model = sklearn.neighbors.KNeighborsRegressor(n_neighbors=3)
-country_stats.plot(kind='scatter', x=predictor[0], y=label)
-plt.show()
