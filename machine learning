@@ -1,0 +1,117 @@
+import numpy as np
+from sklearn import datasets
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.svm import LinearSVC
+
+iris = datasets.load_iris()
+X = iris.data
+y = (iris.target == 2).astype(np.float64)  
+# SVMs can't handle multilabel classification
+# reduce to "Iris virginica" vs. "Not Iris virginica"
+
+svm = Pipeline([
+                ("scaler", StandardScaler()),
+                ("linear_svc", LinearSVC(C=1, loss="hinge"))
+])
+svm.fit(X, y)
+svm.predict([[5.5, 1.7, 2.8, 0.1]])
+
+"""# Nonlinear classification"""
+
+from sklearn.svm import SVC
+poly_svm = Pipeline([
+                     ("scaler", StandardScaler()),
+                     ("svc", SVC(kernel="poly", degree=3, coef0=1, C=5))    
+                     # coef0 controls how much model is influenced by high-degree vs. low-degree polynomials
+])
+poly_svm.fit(X, y)
+
+rbf_svm = Pipeline([
+                    ("scaler", StandardScaler()),
+                    ("svc", SVC(kernel="rbf", gamma=5, C=0.0001))
+])
+rbf_svm.fit(X, y)
+
+"""# Finding good hyperparameters"""
+
+import numpy as np
+from sklearn.model_selection import GridSearchCV, StratifiedShuffleSplit
+gamma_range = np.logspace(-3, 3, 7)
+C_range = np.logspace(-3, 3, 7)
+param_grid = dict(gamma=gamma_range, C=C_range)
+cv = StratifiedShuffleSplit(n_splits=5, test_size=0.2, random_state=42)
+grid = GridSearchCV(SVC(), param_grid=param_grid, cv=cv)
+grid.fit(X, y)
+print(gamma_range, C_range)
+
+# Commented out IPython magic to ensure Python compatibility.
+print("The best parameters are %s with a score of %0.2f"
+#       % (grid.best_params_, grid.best_score_))
+
+"""# SVM regression"""
+
+from sklearn.svm import LinearSVR
+
+svmr = LinearSVR(epsilon=1.5)
+svmr.fit(X, y)
+
+# Use SVR (not LinearSVR) class to support kernel trick for nonlinear data
+from sklearn.svm import SVR
+
+svmr_poly = SVR(kernel="poly", degree=2, C=100, epsilon=0.1)
+svmr_poly.fit(X, y)
+
+from sklearn.datasets import fetch_openml
+mnist = fetch_openml('mnist_784', version=1, cache=True)
+
+X = mnist["data"]
+y = mnist["target"].astype(np.uint8)
+
+X_train = X[:60000]
+y_train = y[:60000]
+X_test = X[60000:]
+y_test = y[60000:]
+
+lin_clf = LinearSVC(random_state=42)
+lin_clf.fit(X_train, y_train)
+
+from sklearn.metrics import accuracy_score
+
+y_pred = lin_clf.predict(X_train)
+accuracy_score(y_train, y_pred)
+
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train.astype(np.float32))
+X_test_scaled = scaler.transform(X_test.astype(np.float32))
+
+lin_clf = LinearSVC(random_state=42)
+lin_clf.fit(X_train_scaled, y_train)
+
+y_pred = lin_clf.predict(X_train_scaled)
+accuracy_score(y_train, y_pred)
+
+svm_clf = SVC(gamma="scale")
+svm_clf.fit(X_train_scaled[:10000], y_train[:10000])
+
+y_pred = svm_clf.predict(X_train_scaled)
+accuracy_score(y_train, y_pred)
+
+from sklearn.model_selection import RandomizedSearchCV
+from scipy.stats import reciprocal, uniform
+
+param_distributions = {"gamma": reciprocal(0.001, 0.1), "C": uniform(1, 10)}
+rnd_search_cv = RandomizedSearchCV(svm_clf, param_distributions, n_iter=10, verbose=2, cv=3)
+rnd_search_cv.fit(X_train_scaled[:1000], y_train[:1000])
+
+rnd_search_cv.best_estimator_
+
+rnd_search_cv.best_score_
+
+rnd_search_cv.best_estimator_.fit(X_train_scaled, y_train)
+
+y_pred = rnd_search_cv.best_estimator_.predict(X_train_scaled)
+accuracy_score(y_train, y_pred)
+
+y_pred = rnd_search_cv.best_estimator_.predict(X_test_scaled)
+accuracy_score(y_test, y_pred)
