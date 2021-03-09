@@ -46,11 +46,11 @@ void main()
   
    yyparse(); 
    if(flag==0) 
-   printf("\nEntered arithmetic expression is Valid\n\n"); 
+   printf("\nValid Expression.\n\n"); 
 } 
   
 void yyerror() 
 { 
-   printf("\nEntered arithmetic expression is Invalid\n\n"); 
+   printf("\nInvalid Expression.\n\n"); 
    flag=1; 
 } 
