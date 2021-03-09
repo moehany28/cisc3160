@@ -12,12 +12,12 @@
   
 %left '(' ')'
   
-/* Rule Section */
+/* Rules */
 %% 
   
 ArithmeticExpression: E{ 
   
-         printf("\nResult=%d\n", $$); 
+         printf("\nAnswer=%d\n", $$); 
   
          return 0; 
   
@@ -39,14 +39,10 @@ ArithmeticExpression: E{
  ; 
   
 %% 
-  
-//driver code 
+
 void main() 
 { 
-   printf("\nEnter Any Arithmetic Expression which  
-                   can have operations Addition,  
-                   Subtraction, Multiplication, Division,  
-                          Modulus and Round brackets:\n"); 
+   printf("\nEnter a basic arithmetic expression using any of the following symbols (+,-,*,/,()) : \n"); 
   
    yyparse(); 
    if(flag==0) 
