@@ -1,0 +1,39 @@
+ Enter a basic arithmetic expression using any of the following symbols (+,-,*,/,()) : 
+ 9+12
+ 
+ Result=21
+ 
+ Valid Expression.
+ 
+ Enter a basic arithmetic expression using any of the following symbols (+,-,*,/,()) : 
+ 9+12*
+ 
+ Invalid Expression.
+ 
+ Enter a basic arithmetic expression using any of the following symbols (+,-,*,/,()) : 
+ 9*9
+ 
+ Result=81
+ 
+ Valid Expression.
+ 
+ Enter a basic arithmetic expression using any of the following symbols (+,-,*,/,()) : 
+ 6/6
+ 
+ Result=1
+ 
+ Valid Expression.
+ 
+ Enter a basic arithmetic expression using any of the following symbols (+,-,*,/,(),%) : 
+ (2+4)*9
+ 
+ Result=54
+ 
+ Valid Expression.
+ 
+ Enter a basic arithmetic expression using any of the following symbols (+,-,*,/,(),%) : 
+ (2+4)%5
+ 
+ Result=1
+ 
+ Valid Expression.
