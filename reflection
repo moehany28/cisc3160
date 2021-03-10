@@ -1,0 +1,14 @@
+Mohamed Ibrahim
+CISC 3160
+Professor Chuang
+10 March 2021
+
+Reflection Lab 2
+
+This assignment was alot harder than i thought it would be. Lex and yacc are very new to me and tehrefore i found myself watching alot of videos to 
+figure out what was messing up my code. Writing a calculator in java was much simpler and that lead me to believe this may bear a lot of resemblance
+to previous work I have done. In the beginning, i had a large issue figuring out how to run the code but once i figured it out it took me a long
+time to work out all the small issues i had with the code. Including error statements came at the end because my code generally ran with multiple
+so until i was able to work out the code errors i was not able to add erros that may be caused by the user of the program. Overall, this assignment
+shows us how complex compilers are and how they are much more sophistacted than we think they are. We have the luxury of using ide's with compilers
+already there for us and this shows us that there is much more at work than we see in foresight.
