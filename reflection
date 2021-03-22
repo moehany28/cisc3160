@@ -1,14 +1,16 @@
 Mohamed Ibrahim
 CISC 3160
 Professor Chuang
-10 March 2021
+22 March 2021
 
-Reflection Lab 2
+Reflection Lab 3
 
-This assignment was alot harder than i thought it would be. Lex and yacc are very new to me and tehrefore i found myself watching alot of videos to 
-figure out what was messing up my code. Writing a calculator in java was much simpler and that lead me to believe this may bear a lot of resemblance
-to previous work I have done. In the beginning, i had a large issue figuring out how to run the code but once i figured it out it took me a long
-time to work out all the small issues i had with the code. Including error statements came at the end because my code generally ran with multiple
-so until i was able to work out the code errors i was not able to add erros that may be caused by the user of the program. Overall, this assignment
-shows us how complex compilers are and how they are much more sophistacted than we think they are. We have the luxury of using ide's with compilers
-already there for us and this shows us that there is much more at work than we see in foresight.
+For this assignment i worked on working our all errors i had in my code originally. The issue with lex and yacc is the languages are very
+technical when it comes to their syntax. One small mistake throws the program into shambles. This is different from other languages with compilers
+built in because they will let you know the issues exist before running but what i found in my trials is that the code will run but will just be obsolete.
+I also wanted to ensure that my code would run with multiple numbers to see if the code had limiters on how many numbers could be in one expression.
+This excersice helped me focus on understanding the technical aspects of lex and yacc but i still am not too comfortable working with them.
+What i want to try soon is translating this code into java. I wrote the code for a caluclator in java a while back but writing the lexer and parser 
+might prove to be much more difficult. Writing the grammer for a wholel anguage is much more difficult than what we seem to understand because we have
+already been given languages and IDEs with the languages built. This makes writing whatever code we wish much easier. This gives us a great
+advantage over those who have written code over the years and built the languages from the ground up.
