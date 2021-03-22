@@ -1,0 +1,16 @@
+DESIGN DOCUMENT
+
+This code produces an integer response from any simple arithmetic expression. The symbols or operations allowed are as follows:
+Addition (+) - adds two integers together
+Subtraction (-) - subtracts the second integer from the first
+Multiplication (*) - multiplies the two integers together
+Division ( / ) - divides the first integer by the second returning an integer value
+Modulo ( % ) - returns the remiander after dividing the first integer by the second. will return 0 if first is perfectly divisible by second.
+
+In addition to these operations the user may also use parenthesis ('(', ')') to describe the order of operations and dictate which operations should be carried out first.
+After inputting a valid expression, The user will recieve the result of their operation followed by a message stating their operation was 
+written in a format allowed by the calculator.
+
+If the user inputs a command that would produce an error on a scientific calculator (i.e. a number with an operation after not followed by a number, an open 
+parenthesis that does not get closed) the user will recieve an error message stating the expression they inputted was invalid by mathematical standards and
+therefore could not be carried out by the calculator.
