@@ -11,6 +11,8 @@
 %left '*' '/' '%'
   
 %left '(' ')'
+
+%left '<' '>'
   
 /* Rules */
 %% 
@@ -28,7 +30,11 @@ ArithmeticExpression: E{
   
  |E'*'E {$$=$1*$3;} 
   
- |E'/'E {$$=$1/$3;} 
+ |E'/'E {$$=$1/$3;}
+ 
+ |E'>'E {$$=$1>$3;}
+ 
+ |E'<'E {$$=$1<$3;}
   
  |E'%'E {$$=$1%$3;} 
   
@@ -42,7 +48,7 @@ ArithmeticExpression: E{
 
 void main() 
 { 
-   printf("\nEnter a basic arithmetic expression using any of the following symbols (+,-,*,/,()) : \n"); 
+   printf("\nEnter a basic arithmetic expression using any of the following symbols (+,-,*,/,(),<,>) : \n"); 
   
    yyparse(); 
    if(flag==0) 
