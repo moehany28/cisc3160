@@ -1,0 +1,79 @@
+Mohamed Ibrahim
+CISC 3160
+Professor Chuang
+21 April 2021
+
+Reference Guide for GUI Calculator
+https://www.youtube.com/watch?v=mDxEGtMNPtA
+This video explains formatting and designing a guide program from start to finish.
+Includes changing font (size and design as well as color). It also includes editing 
+actions that a button can take and how to jump back and forth between editing that and changing formatting.
+
+https://www.youtube.com/watch?v=5o3fMLPY7qY
+watched this video first as a refresher since I haven’t worked with GUI in a while.
+This allowed me to pick up the essentials on how to create the project and get to the
+design page with all the options that let you drag in buttons and panes.
+
+https://docs.oracle.com/javase/7/docs/api/javax/script/ScriptEngine.html
+Describes the different methods within ScriptEngine and give reference to which things
+are needed to get the method to run.
+
+Pseudo Code
+Method-buttonplusAction
+First expression += next expression
+Set expression  = expression
+
+Method-read and evaluate
+ScriptManager
+Total = (double) evaluate expression through script manager 
+
+Method-clear calculator
+Set expression= blank
+
+Main method 
+Run calculator()
+
+Reference Guide for Reverse Number Guess
+https://docs.python.org/3/library/random.html
+Reference guide for the random number class of python. Used to produce the 
+computers first guess of what my number is. Spits out random integer (when specified)
+between a desired min and max.
+
+https://www.geeksforgeeks.org/python-creating-a-button-in-tkinter/
+Used for creating buttons in the GUI.
+
+Pseudo Code
+Method-getEntry
+Create variable for computer guess, user number
+Secret number = user input
+Guess= random between 1-100
+Ask user if guess matches input
+Run program	//recursive statement allows user to choose if number is higher, lower or correct
+
+Method-lower
+Make the max = previous guess
+Guess = (int) (guess + min)/2 	//decreases possible choices. Add previous guess to minimum pick the number in the middle
+Ask user if guess matches input
+Run program	//recursive statement allows user to choose if number is higher, lower or correct
+
+Method-higher
+Make the min = previous guess
+Guess = (int) (guess + max)/2 	//decreases possible choices. Add previous guess to max pick the number in the middle
+Ask user if guess matches input
+Run program	//recursive statement allows user to choose if number is higher, lower or correct
+
+Method- is correct
+Returns an exit statement
+Allows user to input a new number and continue
+
+Reflection
+This assignment was not difficult because of having to code in different languages and get used to them quickly. It was 
+made much easier by the fact that we were instructed to research and gather materials on how we would code our assignments
+before even starting. After gathering these materials, the assignment proved less difficult as we knew where each part of 
+the assignment could be found just by jumping back and forth between the resources. The pseudo code was also a great help. 
+Usually, I do not write pseudo code, but I do usually spend days thinking about how I will code an assignment before I sit 
+down and get working on it. This forces me to put my ideas on paper and revise them as I progressed instead of coming up with
+a ton of ideas and then just working on whichever one I could remember at the time. In addition, putting the pseudo code on 
+paper allows you to start thinking about an approach and jump back to research to find more ways of approaching or enhancing
+that method before committing to certain techniques or methods.
+
