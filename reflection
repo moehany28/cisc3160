@@ -1,0 +1,29 @@
+Mohamed Ibrahim
+CISC 3160
+Professor Chuang
+05 May 2021
+
+Reflection Lab 5
+
+For this assignment we were tasked with finding some old code we had written and revising it. The code I chose to revise was an old
+PhonebookEntry class. This class contained a multitude of methods from equals to call as well as methods like read. These methods all had 
+a specific purpose. Fortunatly enough for me, I was able to figure out what those purposes were because on this project i had 
+written no comments whatsoever. Commenting on your work is so important as I've realized over the years. I truly learned the advantage of
+commenting when i began my internship in late 2019. I had begun an internship where my main focus was writting and maintaining VBA macros
+but the language was very new to me. Luckily for me, the previous intern had written many macros and left them for me. Using his comments,
+i was able to figure out what every method did even though i was not familiar with the language or syntax of VBA at the time. When i looked at
+this project it was immediately clear what some of the methods were but methods like "call" were a little less obvious. I assumed that 
+some phone numbers were structured differently but this is too big a risk when working with old code. A comment wouldve made it much 
+more clear for the next person working on the code as to why it was even included. One thing i did like about my old code was that i made
+the modification for the program while reading to understand that phonebook entries will be read in alphabetically so there is no need to check
+the entire book before allowing the entry to pass. The loop simply alerted the user that a duplicate name was present if two names were 
+the same but had different phone numbers. Another thing that was good was the use of a method to read in an entry rather than a method that 
+read in the entire file. This allowed the user to incorporate the read into the loop so multiple instances can be compared against each other.
+I was glad this code was written in java. This was the language we used mainly for the first two years of programming courses at 
+Brooklyn College and it was what i was, and still am, most familiar with. it works quick and has a multitude of pre-existing
+methods that allow for easy implementation. I do wish however that i had kept better records of my planning stages back then. 
+Over the last few semesters, professors have insisted that we keep planning documents with either pseudo code or anything to show our 
+train of thought when we did these projects and that would've been incredibly helpful this time around. Overall, i do not believe
+i did a bad job at all when i wrote this code originally. The code was structured nicely and had methods for each specific task which
+eliminates clutter throughout the programming. If i had to solve it again, i believe my approach would be pretty similar but i would
+be much more focused on commenting this time around and keeping records of my thought process when writting out the program.
